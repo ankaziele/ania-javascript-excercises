@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Parallax</title>
     <style>
-    
-    .parallax{
-        background: #4d37b6;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
+       
 
-    }
-    
+        .container{
+            margin: 0px;
+            background: url(images/background.png);
+            height: 400px;
+            width: 100%;
+            position: absolute;
+        }
+
+        #parallax-layer1 {
+            position: relative;
+            background: url(images/github.png) no-repeat 300px 0px;
+            width: 100%;
+            height: 800px;
+        }
+
+        #content-layer {
+            position: relative;
+        }
     </style>
 </head>
+
 <body>
-    <div class="parallax">
-        <div class="parallax-layer1"> <img src="images/css.png"> </div>
-        <div class="parallax-layer1"> <img src="images/github.png"></div>
-        <div class="parallax-layer2"> <img src="images/html.png"> </div>
-        <div class="parallax-layer2"> <img src="images/js.png"> </div>
-        <div class="parallax-layer3"> <img src="images/react.png"> </div>
+
+    <div class="container">
+        <div id="parallax-layer1"></div>
+        <div id="content-layer">
     </div>
+    </div>
+    <script>
+
+        var gitImage = document.getElementById('parallax-layer1');
+
+        window.addEventListener('scroll', function(){
+            var screenOffset = window.scrollY;
+            var gitOffset = screenOffset * 0.7;
+
+            gitImage.style.bottom = (30 -  gitOffset) + 'px';
+            gitImage.style.marginLeft= (10 + gitOffset) + 'px';
+        })
+
+    </script>
 </body>
+
 </html>
