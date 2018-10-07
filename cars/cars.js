@@ -10,13 +10,13 @@ var velocity = 2;
 
 window.addEventListener('keydown', function (event){
 
-if (event.code === 'ArrowRight' && canMoveRight()) {
+if (event.code === 'ArrowRight' ) {
     position += velocity*2;
     car.style.marginLeft = position + 'px'
 } 
 // moving left
 
-if (event.code === 'ArrowLeft' && canMoveLeft()){
+if (event.code === 'ArrowLeft' ){
     position -= velocity*2
     car.style.marginLeft = position + 'px'
 }
@@ -27,11 +27,11 @@ if (event.code === 'ArrowLeft' && canMoveLeft()){
 //don't go outside screen
 
 
-function canMoveRight(){
-   return car.offsetLeft + car.clientWidth <= road.clientWidth
-}
+// function canMoveRight(){
+//    return car.offsetLeft + car.clientWidth <= road.clientWidth
+// }
 
-function canMoveLeft(){
-    return car.offsetLeft > road.offsetLeft
-}
+// function canMoveLeft(){
+//     return car.offsetLeft > road.offsetLeft
+// }
 
