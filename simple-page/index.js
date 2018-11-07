@@ -11,8 +11,13 @@ for (var i = 0; i <= 10; i++) {
 
   for (var j = 0; j <= 5; j++) {
     newElement = document.createElement("p");
-    newElement.innerText = "duch";
-    newElement.style.color = "yellow";
+    if (j % 2 === 0) {
+      newElement.innerText = "duszek";
+      newElement.style.color = "white";
+    } else {
+      newElement.innerText = "duch";
+      newElement.style.color = "yellow";
+    }
     newElement.style.marginLeft = "20px";
     element.appendChild(newElement);
   }
@@ -20,18 +25,16 @@ for (var i = 0; i <= 10; i++) {
   body.appendChild(element);
 }
 
-document.querySelectorAll('div:nth-child(odd)').forEach(element => element.style.background = 'green'
-)
+document
+  .querySelectorAll("div:nth-child(odd)")
+  .forEach(element => (element.style.background = "green"));
 
-document.querySelectorAll('p').forEach(
-  
-  function(element){
+document.querySelectorAll("p").forEach(function(element) {
+  element.addEventListener(
+    "click",
 
-    element.addEventListener('click', 
-    
-    function(){
-
-     this.style.backgroundColor = 'aqua'
-    })
-
-  })
+    function() {
+      this.style.backgroundColor = "aqua";
+    }
+  );
+});
