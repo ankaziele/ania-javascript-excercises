@@ -23,4 +23,15 @@ for (var i = 0; i <= 10; i++) {
 document.querySelectorAll('div:nth-child(odd)').forEach(element => element.style.background = 'green'
 )
 
-document.querySelectorAll('p').forEach(element =>  element.addEventListener('click', event => event.target.style.backgroundColor = 'aqua'))
+document.querySelectorAll('p').forEach(
+  
+  function(element){
+
+    element.addEventListener('click', 
+    
+    function(){
+
+     this.style.backgroundColor = 'aqua'
+    })
+
+  })
